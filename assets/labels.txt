@@ -1,0 +1,7 @@
+0 Battery Light
+1 Check Engine
+2 Low Tire Pressure
+3 Battery
+4 Oil Cap
+5 Window Fluid Valve
+6 Coolant Valve
