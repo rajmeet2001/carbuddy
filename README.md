@@ -1,2 +1,7 @@
-# carbuddy
-An app that can help users learn more about the common parts and issues with their car
+# CarBuddy
+
+A new Flutter project.
+
+## Getting Started
+
+FlutterFlow projects are built to run on the Flutter _stable_ release.
