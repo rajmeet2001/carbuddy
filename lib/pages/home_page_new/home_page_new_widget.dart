@@ -180,23 +180,35 @@ class _HomePageNewWidgetState extends State<HomePageNewWidget>
                                   ClipRRect(
                                     borderRadius: BorderRadius.circular(16.0),
                                     child: Image.network(
-                                      'https://images.unsplash.com/photo-1470290449668-02dd93d9420a?w=500&h=500',
+                                      'https://gray-impressed-sailfish-505.mypinata.cloud/files/bafkreifkaowubw6skfwqpjvftl6lcqsejzcxyqpfdeasoupwdudiry2jwi?X-Algorithm=PINATA1&X-Date=1731859381&X-Expires=30&X-Method=GET&X-Signature=3ecdc530d4b68cd4568b7c325c6486e17448bf9d2872ff5622e2dae6e39e6dea',
+                                      width: MediaQuery.sizeOf(context).width *
+                                          0.01,
+                                      height:
+                                          MediaQuery.sizeOf(context).height *
+                                              1.0,
+                                      fit: BoxFit.contain,
+                                    ),
+                                  ),
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(16.0),
+                                    child: Image.asset(
+                                      'assets/images/56.jpg',
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
                                       height:
                                           MediaQuery.sizeOf(context).height *
                                               1.0,
-                                      fit: BoxFit.cover,
+                                      fit: BoxFit.fill,
                                     ),
                                   ),
                                 ],
                               ),
                             ),
                             FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
+                              onPressed: () async {
+                                context.pushNamed('CheckEngine');
                               },
-                              text: 'Upload Image',
+                              text: 'Analyze',
                               options: FFButtonOptions(
                                 width: 200.0,
                                 height: 50.0,
