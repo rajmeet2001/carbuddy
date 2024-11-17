@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '/index.dart';
+import '/main.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 export 'package:go_router/go_router.dart';
@@ -29,17 +30,56 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) => const HomePageWidget(),
+      errorBuilder: (context, state) => const NavBarPage(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => const HomePageWidget(),
+          builder: (context, _) => const NavBarPage(),
         ),
         FFRoute(
-          name: 'HomePage',
-          path: '/homePage',
-          builder: (context, params) => const HomePageWidget(),
+          name: 'ListofServices',
+          path: '/listofServices',
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'ListofServices')
+              : const ListofServicesWidget(),
+        ),
+        FFRoute(
+          name: 'OilChange',
+          path: '/oilChange',
+          builder: (context, params) => const OilChangeWidget(),
+        ),
+        FFRoute(
+          name: 'HomePageNew',
+          path: '/homePageNew',
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'HomePageNew')
+              : const HomePageNewWidget(),
+        ),
+        FFRoute(
+          name: 'CabinAirFilter',
+          path: '/cabinAirFilter',
+          builder: (context, params) => const CabinAirFilterWidget(),
+        ),
+        FFRoute(
+          name: 'BrakeFluidFlush',
+          path: '/brakeFluidFlush',
+          builder: (context, params) => const BrakeFluidFlushWidget(),
+        ),
+        FFRoute(
+          name: 'CheckEngine',
+          path: '/checkEngine',
+          builder: (context, params) => const CheckEngineWidget(),
+        ),
+        FFRoute(
+          name: 'LowTirePressure',
+          path: '/lowTirePressure',
+          builder: (context, params) => const LowTirePressureWidget(),
+        ),
+        FFRoute(
+          name: 'AutomaticTransmission',
+          path: '/automaticTransmission',
+          builder: (context, params) => const AutomaticTransmissionWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
